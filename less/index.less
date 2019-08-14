@@ -4,56 +4,268 @@
    License: none (public domain)
 */
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
 }
 body {
-	line-height: 1;
+  line-height: 1;
 }
-ol, ul {
-	list-style: none;
+ol,
+ul {
+  list-style: none;
 }
-blockquote, q {
-	quotes: none;
+blockquote,
+q {
+  quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
 }
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 /* Set every element's box-sizing to border-box */
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
+html,
+body {
+  height: 100%;
+  font-family: 'Cabin', sans-serif;
 }
 
+h1, h2, h3, h4, h5, h6{
+	font-family: 'Cabin', sans-serif;
+}
+//vars//
+@navbackground: darkslategray;
+@background: gray;
+
+.hoverMixin(){
+	&:hover{
+		background:@background;
+		color:black;
+		border:1px solid black;
+	}
+}
+
+// styling the navbar //
+
+
+//style//
+.topnav{
+	background-color:@navbackground;
+	display:flex;
+	justify-content: space-between;
+
+	.icon{
+		display:none;
+	}//closing icon//
+
+	a{
+		color:white;
+		padding:14px 16px;
+		text-decoration:none;
+		font-size: 16px;
+	}
+
+	#myLinks a:hover{
+		background-color:lightgray;
+		color:black;
+		border-right: 2px solid black;
+		border-left: 2px solid black;
+	}
+
+	#myLinks{
+		display:flex;
+		justify-content: space-between;
+	}
+
+
+}//closing topnav//
+
+@media (max-width:500px){
+	.topnav {
+	overflow: hidden;
+	background-color: @navbackground;
+	position:relative;
+	padding: 0;
+	display:block;
+
+	#myLinks {
+		display: none;
+	} //close #myLinks//
+
+	a {
+		color: white;
+		padding: 14px 16px;
+		text-decoration: none;
+		font-size: 17px;
+		display: block;
+	}//close a links//
+
+	.icon {
+		background: black;
+		display: block;
+		position: absolute;
+		right: 0;
+		top: 0;
+		visibility: visible;
+		} //close a .icon class//
+
+	a:hover {
+		background-color: lightslategray;
+		color: white;
+		border:none;
+	}//close a:hover//
+
+	.active{
+		background-color: @navbackground;
+		color:white;
+	}//close .active // 
+	} //close nav//
+}//close media
+
+//styling header//
+header{
+	background:@background;
+	height: 40vh;
+	border-top:2px solid black;
+	text-align:center;
+	background-image: url("../img/background.jpg");
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center;
+
+	div{
+		width:70%;
+		height: 40vh;
+		margin:auto;
+		display:flex;
+		align-items:flex-start;
+		justify-content: center;
+		flex-direction: column;
+	}
+
+	h1{
+		font-size:2.5rem;
+		color:white;	
+	}
+
+	h2{
+		font-size:1.6rem;
+		color:white;
+	}
+}
+
+//styling main content//
+
+.mainContent{
+	background-color:@background;
+}

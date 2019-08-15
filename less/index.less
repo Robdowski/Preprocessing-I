@@ -133,7 +133,6 @@ table {
 * {
   box-sizing: border-box;
   max-width: 100%;
-  border: 1px solid black;
 }
 
 html,
@@ -176,9 +175,6 @@ p{
 	align-items:center;
 }
 
-.flexify(){
-	display:flex;
-}
 
 // styling the navbar //
 
@@ -188,6 +184,8 @@ p{
 	background-color:@navbackground;
 	display:flex;
 	justify-content: space-between;
+	width:100%;
+	position:fixed;
 
 	.icon{
 		display:none;
@@ -293,7 +291,10 @@ header{
 
 .mainContent{
 	background-color:@background;
-	
+	.columnize();
+	align-items:center;
+	justify-content: space-between;
+
 	h2{
 		.h2()
 	}
@@ -301,22 +302,28 @@ header{
 
 	#about{
 		display:flex;	
+		height: 60vh;
+		
+		@media (max-width:500px){
+			flex-direction:column;
+			width:100%;
+		}
 	
 		.about{
 			width:65%;
-			height:45vh;
 			background-image: url("../img/tulsa.jpg");
 			background-size: cover;
 			background-color: darkslategray;
 			.columnize();
 			padding:10% 15%;
 
+			@media (max-width:500px){
+				width:100%;
+			}
+
 			div{
 				background:rgba(0, 0, 0, 0.5);
 				padding: 50px 25px;
-				position:relative;
-				top: 20%;
-				left: 10%;
 
 				button{
 					padding: 10px 16px;
@@ -329,6 +336,10 @@ header{
 			width:35%;
 			.columnize();
 			background-image: linear-gradient(to top right, black, gray);
+
+			@media (max-width: 500px){
+				width:100%;
+			}
 
 			h2{
 				font-size: 2.5rem;
@@ -444,6 +455,7 @@ header{
 
 // form // 
 #contact{
+	display:flex;
 	padding: 3vh 0;
 	background-image: linear-gradient(to bottom, darkgray, black );
 	border-top: 2px solid black;

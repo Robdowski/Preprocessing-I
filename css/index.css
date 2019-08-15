@@ -261,6 +261,13 @@ header h2 {
 .mainContent #about .about div {
   background: rgba(0, 0, 0, 0.5);
   padding: 50px 25px;
+  position: relative;
+  top: 20%;
+  left: 10%;
+}
+.mainContent #about .about div button {
+  padding: 10px 16px;
+  margin-top: 15px;
 }
 .mainContent #about .skills {
   width: 35%;

@@ -4,56 +4,488 @@
    License: none (public domain)
 */
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
 }
 body {
-	line-height: 1;
+  line-height: 1;
 }
-ol, ul {
-	list-style: none;
+ol,
+ul {
+  list-style: none;
 }
-blockquote, q {
-	quotes: none;
+blockquote,
+q {
+  quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
 }
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 /* Set every element's box-sizing to border-box */
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
+  max-width: 100%;
+  border: 1px solid black;
 }
 
-html, body {
-    height: 100%;
+html,
+body {
+	width:100%;
+  	height: 100%;
+  	font-family: 'Cabin', sans-serif;
+  	background:@background;
 }
 
+h1, h2, h3, h4, h5, h6{
+	font-family: 'Cabin', sans-serif;
+}
+
+p{
+	font-size: 1rem;
+	color:white;
+}
+//vars//
+@navbackground: darkslategray;
+@background: gray;
+@margin: 5vh auto;
+
+.hoverMixin(){
+	&:hover{
+		background:@background;
+		color:black;
+		border:1px solid black;
+	}
+}
+
+.h2(){
+	font-size: 1.6rem;
+	color:white;
+}
+
+.columnize(){
+	display:flex;
+	flex-direction:column;
+	align-items:center;
+}
+
+.flexify(){
+	display:flex;
+}
+
+// styling the navbar //
+
+
+//style//
+.topnav{
+	background-color:@navbackground;
+	display:flex;
+	justify-content: space-between;
+
+	.icon{
+		display:none;
+	}//closing icon//
+
+	a{
+		color:white;
+		padding:14px 16px;
+		text-decoration:none;
+		font-size: 16px;
+	}
+
+	#myLinks a:hover{
+		background-color:lightgray;
+		color:black;
+		border-right: 2px solid black;
+		border-left: 2px solid black;
+	}
+
+	#myLinks{
+		display:flex;
+		justify-content: space-between;
+	}
+
+	@media (max-width:500px){
+	
+		overflow: hidden;
+		background-color: @navbackground;
+		position:relative;
+		padding: 0;
+		display:block;
+	
+		#myLinks {
+			display: none;
+		} //close #myLinks//
+	
+		a {
+			color: white;
+			padding: 14px 16px;
+			text-decoration: none;
+			font-size: 17px;
+			display: block;
+		}//close a links//
+	
+		.icon {
+			background: black;
+			display: block;
+			position: absolute;
+			right: 0;
+			top: 0;
+			visibility: visible;
+			} //close a .icon class//
+	
+		a:hover {
+			background-color: lightslategray;
+			color: white;
+			border:none;
+		}//close a:hover//
+	
+		.active{
+			background-color: @navbackground;
+			color:white;
+		}//close .active // 
+	 
+	}//close media
+
+}//closing topnav//
+
+
+
+//styling header//
+header{
+	background:@background;
+	height: 60vh;
+	border-top:2px solid black;
+	text-align:center;
+	background-image: url("../img/background.jpg");
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center;
+
+	div{
+		width:70%;
+		height: 40vh;
+		margin:auto;
+		display:flex;
+		align-items:flex-start;
+		justify-content: center;
+		flex-direction: column;
+	}
+
+	h1{
+		font-size:2.5rem;
+		color:white;	
+	}
+
+	h2{
+		.h2()
+	}
+}
+
+//styling main content//
+
+.mainContent{
+	background-color:@background;
+	
+	h2{
+		.h2()
+	}
+
+
+	#about{
+		display:flex;	
+	
+		.about{
+			width:65%;
+			height:45vh;
+			background-image: url("../img/tulsa.jpg");
+			background-size: cover;
+			background-color: darkslategray;
+			.columnize();
+			padding:10% 15%;
+
+			div{
+				background:rgba(0, 0, 0, 0.5);
+				padding: 50px 25px;
+				position:relative;
+				top: 20%;
+				left: 10%;
+
+				button{
+					padding: 10px 16px;
+					margin-top: 15px;
+				}
+			}
+		}
+
+		.skills{
+			width:35%;
+			.columnize();
+			background-image: linear-gradient(to top right, black, gray);
+
+			h2{
+				font-size: 2.5rem;
+				position:relative;
+				top: 12vh;
+				font-kerning: auto;
+			}
+
+			div{
+				display:flex;
+				justify-content: space-around;
+				align-items:center;
+				width:100%;
+				height:100%;
+				
+				span{
+					padding:20px;
+					font-size:4rem;
+					color: white;
+				}
+
+				span:hover{
+					font-size:6rem;
+					transition: 0.2s;
+					cursor: pointer;
+				}
+
+			}
+		}
+			
+	
+	}// closing about section //
+	
+	#portfolio{
+		.columnize();
+		background-image: linear-gradient(to bottom right, black, gray);
+
+		.porthead{
+			height:20vh;
+			width:100%;
+			display:flex;
+			justify-content: center;
+			align-items:center;
+			border-bottom: 2px solid black;
+
+			h2{
+				font-size: 4rem;
+			}
+		}
+
+		div{
+			width:60%;
+			margin:auto;
+
+		}
+
+		.portfolioimage{
+			width:45%;
+		}
+		
+
+		.one, .three{
+			display:flex;
+			justify-content: space-between;
+			align-items: center;
+			text-align:center;
+			padding: 2vh 0;
+
+			div{
+				.columnize();
+			}
+
+			h2{
+				width:40%;
+				text-align:center;
+				padding: 1vh 0;
+			}
+
+			p{
+				width:40%;
+			}
+		}
+
+		.two{
+			display:flex;
+			justify-content: space-between;
+			flex-direction: row-reverse;
+			align-items:center;
+			text-align:center;
+			padding: 2vh 0;
+
+			div{
+				.columnize();
+				
+				h2{
+					width:40%;
+					padding: 1vh 0;
+				}
+
+				p{
+					width:40%;
+				}
+			}
+		}
+
+		
+				
+				
+
+		
+	}//close portfolio//
+}//close main content//
+
+// form // 
+#contact{
+	padding: 3vh 0;
+	background-image: linear-gradient(to bottom, darkgray, black );
+	border-top: 2px solid black;
+
+	input[type=text], select, textarea {
+		width: 100%; 
+		padding: 12px; 
+		border: 1px solid #ccc; 
+		border-radius: 4px; 
+		box-sizing: border-box; 
+		margin-top: 6px; 
+		margin-bottom: 16px; 
+		resize: vertical;
+	}
+	
+	
+	input[type=submit] {
+		background-color: darkslategray;
+		color: white;
+		padding: 12px 20px;
+		border: none;
+		border-radius: 4px;
+		cursor: pointer;
+	}
+	
+	
+	input[type=submit]:hover {
+		background-color: lightslategray;
+		color: black;
+	}
+	
+	
+	.container {
+		border-radius: 5px;
+		background-color: lightgray;
+		padding: 20px;
+		width: 60%;
+		margin:auto;
+		
+
+		form{
+			margin:auto;
+		}
+	}
+}

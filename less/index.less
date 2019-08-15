@@ -132,20 +132,29 @@ table {
 /* Set every element's box-sizing to border-box */
 * {
   box-sizing: border-box;
+  max-width: 100%;
+  border: 1px solid black;
 }
 
 html,
 body {
   height: 100%;
   font-family: 'Cabin', sans-serif;
+  background:@background;
 }
 
 h1, h2, h3, h4, h5, h6{
 	font-family: 'Cabin', sans-serif;
 }
+
+p{
+	font-size: 1rem;
+	color:white;
+}
 //vars//
 @navbackground: darkslategray;
 @background: gray;
+@margin: 5vh auto;
 
 .hoverMixin(){
 	&:hover{
@@ -153,6 +162,17 @@ h1, h2, h3, h4, h5, h6{
 		color:black;
 		border:1px solid black;
 	}
+}
+
+.h2(){
+	font-size: 1.6rem;
+	color:white;
+}
+
+.columnize(){
+	display:flex;
+	flex-direction:column;
+	align-items:center;
 }
 
 // styling the navbar //
@@ -187,55 +207,56 @@ h1, h2, h3, h4, h5, h6{
 		justify-content: space-between;
 	}
 
+	@media (max-width:500px){
+	
+		overflow: hidden;
+		background-color: @navbackground;
+		position:relative;
+		padding: 0;
+		display:block;
+	
+		#myLinks {
+			display: none;
+		} //close #myLinks//
+	
+		a {
+			color: white;
+			padding: 14px 16px;
+			text-decoration: none;
+			font-size: 17px;
+			display: block;
+		}//close a links//
+	
+		.icon {
+			background: black;
+			display: block;
+			position: absolute;
+			right: 0;
+			top: 0;
+			visibility: visible;
+			} //close a .icon class//
+	
+		a:hover {
+			background-color: lightslategray;
+			color: white;
+			border:none;
+		}//close a:hover//
+	
+		.active{
+			background-color: @navbackground;
+			color:white;
+		}//close .active // 
+	 
+	}//close media
 
 }//closing topnav//
 
-@media (max-width:500px){
-	.topnav {
-	overflow: hidden;
-	background-color: @navbackground;
-	position:relative;
-	padding: 0;
-	display:block;
 
-	#myLinks {
-		display: none;
-	} //close #myLinks//
-
-	a {
-		color: white;
-		padding: 14px 16px;
-		text-decoration: none;
-		font-size: 17px;
-		display: block;
-	}//close a links//
-
-	.icon {
-		background: black;
-		display: block;
-		position: absolute;
-		right: 0;
-		top: 0;
-		visibility: visible;
-		} //close a .icon class//
-
-	a:hover {
-		background-color: lightslategray;
-		color: white;
-		border:none;
-	}//close a:hover//
-
-	.active{
-		background-color: @navbackground;
-		color:white;
-	}//close .active // 
-	} //close nav//
-}//close media
 
 //styling header//
 header{
 	background:@background;
-	height: 40vh;
+	height: 60vh;
 	border-top:2px solid black;
 	text-align:center;
 	background-image: url("../img/background.jpg");
@@ -259,8 +280,7 @@ header{
 	}
 
 	h2{
-		font-size:1.6rem;
-		color:white;
+		.h2()
 	}
 }
 
@@ -268,4 +288,63 @@ header{
 
 .mainContent{
 	background-color:@background;
-}
+	
+	h2{
+		.h2()
+	}
+
+
+	#about{
+		display:flex;	
+		
+		.about{
+			width:65%;
+			height:45vh;
+			background-image: url("../img/tulsa.jpg");
+			background-size: cover;
+			background-color: darkslategray;
+			.columnize();
+			padding:10% 15%;
+
+			div{
+				background:rgba(0, 0, 0, 0.5);
+				padding: 50px 25px;
+			}
+		}
+
+		.skills{
+			width:35%;
+			.columnize();
+			background-image: linear-gradient(to top right, black, gray);
+
+			h2{
+				font-size: 2.5rem;
+				position:relative;
+				top: 12vh;
+				font-kerning: auto;
+			}
+
+			div{
+				display:flex;
+				justify-content: space-around;
+				align-items:center;
+				width:100%;
+				height:100%;
+				
+				span{
+					padding:20px;
+					font-size:4rem;
+					color: white;
+				}
+
+				span:hover{
+					font-size:6rem;
+					transition: 0.2s;
+					cursor: pointer;
+				}
+
+			}
+			
+		}
+	}	
+}//close main content//

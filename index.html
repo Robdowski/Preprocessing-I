@@ -54,93 +54,102 @@
         </div>
         <div class="skills">
           <h2>My Skills</h2>
-        <div>
-           <span><i class="fab fa-js-square"></i></span>
-           <span><i class="fab fa-css3"></i></span>
-           <span><i class="fab fa-html5"></i></span>
-        </div>
+          <div>
+            <span><i class="fab fa-js-square"></i></span>
+            <span><i class="fab fa-css3"></i></span>
+            <span><i class="fab fa-html5"></i></span>
+          </div>
           <!---------------- ADD ICONS HERE ------------------>
         </div>
       </div>
       <!---------------Closes About------------------------>
       <div id="portfolio">
         <!--------- Starts Portfolio ---------->
-        <h2>Portfolio</h2>
-        <div>
-          <img src="#" />
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia modi,
-            aspernatur unde distinctio nisi esse voluptatem veritatis vel
-            commodi, nihil officiis quasi quod, enim hic accusamus illum
-            similique fugiat dignissimos?
-          </p>
+        <div class="porthead">
+          <h2>Portfolio</h2>
         </div>
-        <div>
-          <img src="#" />
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis
-            iure atque ratione aliquid voluptatibus et neque ipsam dolorem
-            ducimus corrupti enim, quo aliquam delectus ex nesciunt incidunt
-            facilis dignissimos odio.
-          </p>
+        <div class="one">
+          <img class="portfolioimage" src="img/innovation.jpg" />
+          <div>
+            <h2>Project One</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia
+              modi, aspernatur unde distinctio nisi esse voluptatem veritatis
+              vel commodi, nihil officiis quasi quod, enim hic accusamus illum
+              similique fugiat dignissimos?
+            </p>
+          </div>
         </div>
-        <div>
-          <img src="#" />
-          <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde
-            accusantium maiores laboriosam culpa ipsum provident, maxime,
-            expedita nihil ea odit dolor perspiciatis error dicta ut ab cumque
-            quos doloribus atque.
-          </p>
+        <div class="two">
+          <img class="portfolioimage" src="img/lambda.jpg" />
+          <div>
+            <h2>Project Two</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis
+              iure atque ratione aliquid voluptatibus et neque ipsam dolorem
+              ducimus corrupti enim, quo aliquam delectus ex nesciunt incidunt
+              facilis dignissimos odio.
+            </p>
+          </div>
         </div>
-      </div>
-      <!--------------- Closes Portfolio----------------->
-      <div id="contact">
-        <div class="container">
-          <form action="#">
-            <label for="name">Name</label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              placeholder="Your first and last name.."
-            />
-
-            <label for="cname">Company Name</label>
-            <input
-              type="text"
-              id="cname"
-              name="companyname"
-              placeholder="Your company name.."
-            />
-
-            <label for="package">Package</label>
-            <select id="package" name="package">
-              <option value="australia"
-                >$999.99 Personal / Professional | 1 Page</option
-              >
-              <option value="canada"
-                >$1999.99 Small Business (100 Employess Or Less) | Max. 4
-                Pages</option
-              >
-              <option value="usa"
-                >$XXXX.XX Corporations / Custom Pricing</option
-              >
-            </select>
-
-            <label for="subject">Subject</label>
-            <textarea
-              id="subject"
-              name="subject"
-              placeholder="Write something.."
-              style="height:200px"
-            ></textarea>
-
-            <input type="submit" value="Submit" />
-          </form>
+        <div class="three">
+          <img class="portfolioimage" src="img/projects.jpg" />
+          <div>
+            <h2>Project Three</h2>
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde
+              accusantium maiores laboriosam culpa ipsum provident, maxime,
+              expedita nihil ea odit dolor perspiciatis error dicta ut ab cumque
+              quos doloribus atque.
+            </p>
+          </div>
         </div>
       </div>
     </section>
+    <!--------------- Closes Portfolio----------------->
+    <div id="contact">
+      <div class="container">
+        <form action="#">
+          <label for="name">Name</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Your first and last name.."
+          />
+
+          <label for="cname">Company Name</label>
+          <input
+            type="text"
+            id="cname"
+            name="companyname"
+            placeholder="Your company name.."
+          />
+
+          <label for="package">Package</label>
+          <select id="package" name="package">
+            <option value="australia"
+              >$999.99 Personal / Professional | 1 Page</option
+            >
+            <option value="canada"
+              >$1999.99 Small Business (100 Employess Or Less) | Max. 4
+              Pages</option
+            >
+            <option value="usa">$XXXX.XX Corporations / Custom Pricing</option>
+          </select>
+
+          <label for="subject">Subject</label>
+          <textarea
+            id="subject"
+            name="subject"
+            placeholder="Write something.."
+            style="height:200px"
+          ></textarea>
+
+          <input type="submit" value="Submit" />
+        </form>
+      </div>
+    </div>
     <script>
       function myFunction() {
         var x = document.getElementById("myLinks");
